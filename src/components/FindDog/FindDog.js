@@ -64,13 +64,13 @@ export default class FindDog extends Component {
                             ref="caption"
                             onChange={( e ) => this.updateCaption( e.target.value ) }
                         />
-                        <button 
-                            type='' 
-                            className='save'
-                            onClick={() => this.addNewDog(this.props.randomDogURL)}>
-                            Save
-                        </button>
                     </div> 
+                    <button 
+                        type='' 
+                        className='save'
+                        onClick={() => this.addNewDog(this.props.randomDogURL)}>
+                        Save
+                    </button>
                 </div>
             </div>
         )
