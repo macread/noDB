@@ -10,10 +10,10 @@ export default class DogWindow extends Component {
         
         this.state = { 
                     dogs: [],
-                    randomDogURL: 'https://images.dog.ceo/breeds/pembroke/n02113023_2054.jpg',
-                    // lastID: 3,
+                    randomDogURL: '',
                     newDogName: '',
-                    baseURL: '/api/dogs'
+                    baseURL: '/api/dogs',
+                    defaultDog: 'https://images.dog.ceo/breeds/pembroke/n02113023_2054.jpg'
                 }
                 
         this.fetchRandomDog = this.fetchRandomDog.bind(this)
@@ -26,7 +26,9 @@ export default class DogWindow extends Component {
         axios.get( this.state.baseURL ).then( results => {
             this.setState({ dogs: results.data });
         });
-       
+       this.setState({
+           randomDogURL: this.state.defaultDog
+       })
       }
 
     fetchRandomDog() {
@@ -55,17 +57,11 @@ export default class DogWindow extends Component {
         name: newDogName,
         caption: newDogCaption})
         .then ( results=> {
-            this.setState({ dogs: results.data})
+            this.setState({
+                dogs: results.data,
+                randomDogURL: this.state.defaultDog
+            })
         });
-
-        // let newID = this.state.lastID + 1
-        // let newDog = {id: newID, url: newDogURL, name: newDogName, caption: newDogCaption}
-        // this.setState( 
-        //     {
-        //         dogs: [...this.state.dogs,newDog],
-        //         lastID: newID
-        //     }
-        // )
     }
 
     render() {

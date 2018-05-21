@@ -1,27 +1,29 @@
-var dogs = [
-    {id: 0,
-        url: 'https://images.dog.ceo/breeds/dane-great/n02109047_23852.jpg',
-        name: 'Dane',
-        caption: 'If I must'
-    },
-    {id: 1,
-        url: 'https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_3074.jpg',
-        name: 'Chip',
-        caption: 'May I please'
-    },
-    {id: 2,
-        url: 'https://images.dog.ceo/breeds/appenzeller/n02107908_795.jpg',
-        name: 'Frosty',
-        caption: 'I love the snow'
-    },
-    {id: 3,
-        url: 'https://images.dog.ceo/breeds/bulldog-boston/n02096585_1583.jpg',
-        name: 'Fisher',
-        caption: 'Enee meene minie moe'
-    }
-]
+// var dogs = [
+//     {id: 0,
+//         url: 'https://images.dog.ceo/breeds/dane-great/n02109047_23852.jpg',
+//         name: 'Dane',
+//         caption: 'If I must'
+//     },
+//     {id: 1,
+//         url: 'https://images.dog.ceo/breeds/schnauzer-miniature/n02097047_3074.jpg',
+//         name: 'Chip',
+//         caption: 'May I please'
+//     },
+//     {id: 2,
+//         url: 'https://images.dog.ceo/breeds/appenzeller/n02107908_795.jpg',
+//         name: 'Frosty',
+//         caption: 'I love the snow'
+//     },
+//     {id: 3,
+//         url: 'https://images.dog.ceo/breeds/bulldog-boston/n02096585_1583.jpg',
+//         name: 'Fisher',
+//         caption: 'Enee meene minie moe'
+//     }
+// ]
 
-let id = 4;
+var dogs= [];
+
+let id = 0;
 
 module.exports = {
     create: (req, res)=> {

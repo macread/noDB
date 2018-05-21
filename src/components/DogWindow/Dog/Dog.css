@@ -5,13 +5,6 @@
     background: lightgray;
 }
 
-.Dog-text {
-    display: flex;
-    position: relative;
-    left: 20px;
-    flex-direction: column;
-    justify-content: space-around;
-}
 
 .Dog-Image{
     position: relative;
@@ -21,3 +14,38 @@
     width: auto;
 }
 
+.Dog-section{
+    position: relative;
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Dog-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Dog-inputLabel{
+    font-weight: bold;
+}
+
+.Dog-buttons{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Dog-button{
+    display: flex;
+    /* flex-direction: column; */
+    align-content: center;
+}
+
+.FindDog-input{
+    width: 350px;
+}

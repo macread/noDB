@@ -51,29 +51,38 @@ deleteDog(id) {
             
             <div className='Dog'>
                 <img src={ this.props.pictUrl } alt="of a dog" className="Dog-Image"/>
-                <div className="Dog-text">
-                    {
-                        this.state.editing
-                        ? (
-                            <div className='Dog-textButtons'>
+
+                {
+                    this.state.editing
+                    ? (
+                        <div className='Dog-section'>
+                                <span className="Dog-inputLabel">Name:</span>
                                 <input type=''
-                                    className='Dog-name' 
+                                    className='Dog-input' 
                                     value={this.state.dogName} 
                                     onChange={ ( e ) => this.updateDogName( e.target.value ) }
                                 />
+                                <span className="Dog-inputLabel">Caption:</span>
                                 <input type='' 
-                                    className='Dog-caption' 
+                                    className='Dog-input' 
                                     value={this.state.caption} 
                                     onChange={( e ) => this.updateCaption( e.target.value ) }
                                 />
+
+                            <div className='Dog-buttons'>
                                 <button type='' className='Dog-button' onClick={()=> this.cancelEditDog()}>Cancel</button>
                                 <button type='' className='Dog-button' onClick={()=> this.saveDog()}>Save</button>
-                            </div>
-        
-                        ) : (
-                            <div className='Dog-textButtons'>
-                                <span className="Dog-name">Name: {this.props.name}</span>
-                                <span className="Dog-caption">Caption: {this.props.caption}</span>
+                            </div> 
+                        </div>
+    
+                    ) : (
+                        <div className='Dog-section'>
+                            <span className="Dog-inputLabel">Name:</span>
+                            <span className="Dog-input">{this.props.name}</span>
+                            <span className="Dog-inputLabel">Caption:</span>
+                            <span className="Dog-input">{this.props.caption}</span>
+
+                            <div className='Dog-buttons'>
                                 <button type='' className='Dog-button' onClick={()=> this.deleteDog(this.props.id)}>Remove</button>
                                 <button type='' 
                                     className='Dog-button' 
@@ -81,10 +90,11 @@ deleteDog(id) {
                                     Edit
                                 </button>
                             </div>
-                        )
-                    }
-                </div>
-            </div> 
+                        </div>
+                    )
+                }
+            </div>
+
         )
     }
 }

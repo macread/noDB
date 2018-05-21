@@ -5,7 +5,19 @@
     
 }
 
+.FindDog-randomDog{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.findDog-ClickMe{
+    position: absolute;
+    bottom: 8px;
+}
+
 .FindDog-image{
+    position: relative;
     height: 300px;
     width: auto;
 }
@@ -14,7 +26,6 @@
     padding: 0px 8px;
     position: relative;
     width: calc(100vw - 300px);
-    
     display: flex;
     flex-direction: row;
 }
