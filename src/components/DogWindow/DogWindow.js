@@ -20,6 +20,7 @@ export default class DogWindow extends Component {
         this.deleteDog = this.deleteDog.bind(this)
         this.saveDog = this.saveDog.bind(this)
         this.updateDog = this.updateDog.bind(this)
+        this.searchDogs = this.searchDogs.bind(this)
     }
 
     componentDidMount() {
@@ -44,8 +45,15 @@ export default class DogWindow extends Component {
 
     updateDog(id, updatedName, updatedCaption) {
         axios.post(`${this.state.baseURL}/${id}`,
-        {name: updatedName,
-        caption: updatedCaption})
+            {name: updatedName,
+            caption: updatedCaption})
+        .then ( results=> {
+            this.setState({ dogs: results.data})
+        });
+    }
+
+    searchDogs(findName) {
+        axios.get(`${this.state.baseURL}/filter?name=${findName}`)
         .then ( results=> {
             this.setState({ dogs: results.data})
         });
@@ -72,6 +80,7 @@ export default class DogWindow extends Component {
                     fetchRandomDog={this.fetchRandomDog} 
                     randomDogURL={this.state.randomDogURL} 
                     saveDog={this.saveDog}
+                    searchDogs={this.searchDogs}
                 />
                 <div>
                     {

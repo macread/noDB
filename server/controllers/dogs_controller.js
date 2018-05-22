@@ -21,6 +21,8 @@
 //     }
 // ]
 
+// var id = 3;
+
 var dogs= [];
 
 let id = 0;
@@ -56,5 +58,14 @@ module.exports = {
         })
         dogs.splice(idx,1);
         res.status(200).send(dogs)
-    }
+    },
+
+    filter: (req, res)=> {
+        const filteredDogs = dogs.filter( function (dog) { 
+            return (
+                dog.name.search(req.query.name) >=0
+            )
+        })
+        res.status(200).send(filteredDogs);
+    },
 }

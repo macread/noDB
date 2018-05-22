@@ -11,7 +11,9 @@ app.use(bodyParser.json());
 const messagesBaseURL = '/api/dogs';
 app.post(messagesBaseURL,dogsController.create);
 
-app.get('/api/dogs',dogsController.read);
+app.get(`${messagesBaseURL}/filter`,dogsController.filter);
+
+app.get(messagesBaseURL,dogsController.read);
 
 app.post(`${messagesBaseURL}/:id`,dogsController.update);
 

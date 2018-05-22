@@ -30,6 +30,16 @@ export default class FindDog extends Component {
         this.refs.caption.value=''
     }
 
+    searchDogs(){
+        this.props.searchDogs(this.state.dogName, this.state.caption)
+        this.setState({
+            dogName: "",
+            caption: ""
+        })
+        this.refs.dogName.value=''
+        this.refs.caption.value=''
+    }
+
     render() {
         return (
             <div className="FindDog">
@@ -70,6 +80,12 @@ export default class FindDog extends Component {
                         className='save'
                         onClick={() => this.addNewDog(this.props.randomDogURL)}>
                         Save
+                    </button>
+                    <button 
+                        type='' 
+                        className='save'
+                        onClick={() => this.searchDogs()}>
+                        Search
                     </button>
                 </div>
             </div>
